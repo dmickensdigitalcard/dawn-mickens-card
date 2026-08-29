@@ -15,6 +15,8 @@
     --rose:#e8828c;
     --rose-dim:#e8828c66;
     --line:#3a2c22;
+    /* Swap the "data=" value below for your live card URL once GitHub Pages is on */
+    --qr-image:url("https://api.qrserver.com/v1/create-qr-code/?size=300x300&bgcolor=1c130f&color=d4af6a&qzone=1&data=PASTE_YOUR_CARD_URL_HERE");
   }
   *{box-sizing:border-box;margin:0;padding:0;}
   body{
@@ -30,15 +32,28 @@
     width:100%;
     max-width:420px;
   }
-  .crest{
+  .crest-wrap{
     width:110px;height:110px;
-    margin:0 auto 22px;
+    margin:0 auto 10px;
+    perspective:600px;
+  }
+  .crest{
+    width:100%;height:100%;
+    position:relative;
+    cursor:pointer;
+    transform-style:preserve-3d;
+    transition:transform 0.6s cubic-bezier(.4,.2,.2,1);
+  }
+  .crest.flipped{transform:rotateY(180deg);}
+  .crest-face{
+    position:absolute;inset:0;
     border-radius:50%;
     border:1px solid var(--gold-soft);
     display:flex;align-items:center;justify-content:center;
-    position:relative;
+    backface-visibility:hidden;
+    background:var(--bg);
   }
-  .crest::before{
+  .crest-face::before{
     content:"";
     position:absolute;
     inset:8px;
@@ -46,11 +61,27 @@
     border:1px solid var(--gold-soft);
     opacity:0.5;
   }
-  .crest span{
+  .crest-front span{
     font-family:Georgia,'Times New Roman',serif;
     font-size:28px;
     letter-spacing:2px;
     color:var(--gold);
+  }
+  .crest-back{
+    transform:rotateY(180deg);
+    background-color:#0f0a07;
+    background-image:var(--qr-image);
+    background-size:80%;
+    background-position:center;
+    background-repeat:no-repeat;
+  }
+  .crest-caption{
+    text-align:center;
+    font-size:9px;
+    letter-spacing:2px;
+    color:var(--cream-dim);
+    text-transform:uppercase;
+    margin:0 0 4px;
   }
   h1{
     text-align:center;
@@ -242,7 +273,13 @@
 <body>
 
 <div class="card">
-  <div class="crest"><span>DM</span></div>
+  <div class="crest-wrap">
+    <div class="crest" id="crest" onclick="document.getElementById('crest').classList.toggle('flipped')">
+      <div class="crest-face crest-front"><span>DM</span></div>
+      <div class="crest-face crest-back"></div>
+    </div>
+  </div>
+  <div class="crest-caption">Tap for QR code</div>
   <h1>Dawn <em>Mickens</em></h1>
   <div class="tagline">Ceremonies &middot; Journeys &middot; Stories</div>
 
