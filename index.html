@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dawn Mickens | Timeless Connection Wedding Officiants</title>
+<style>
+  :root{
+    --bg:#1c130f;
+    --bg-card:#241a15;
+    --gold:#d4af6a;
+    --gold-soft:#c9a55c;
+    --cream:#f3ead9;
+    --cream-dim:#c9bfae;
+    --rose:#e8828c;
+    --rose-dim:#e8828c66;
+    --line:#3a2c22;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    background:var(--bg);
+    color:var(--cream);
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    display:flex;
+    justify-content:center;
+    padding:32px 16px 60px;
+    min-height:100vh;
+  }
+  .card{
+    width:100%;
+    max-width:420px;
+  }
+  .crest{
+    width:110px;height:110px;
+    margin:0 auto 22px;
+    border-radius:50%;
+    border:1px solid var(--gold-soft);
+    display:flex;align-items:center;justify-content:center;
+    position:relative;
+  }
+  .crest::before{
+    content:"";
+    position:absolute;
+    inset:8px;
+    border-radius:50%;
+    border:1px solid var(--gold-soft);
+    opacity:0.5;
+  }
+  .crest span{
+    font-family:Georgia,'Times New Roman',serif;
+    font-size:28px;
+    letter-spacing:2px;
+    color:var(--gold);
+  }
+  h1{
+    text-align:center;
+    font-family:Georgia,'Times New Roman',serif;
+    font-weight:400;
+    font-size:38px;
+    line-height:1.15;
+    color:var(--cream);
+  }
+  h1 em{
+    color:var(--gold);
+    font-style:italic;
+  }
+  .tagline{
+    text-align:center;
+    font-size:12px;
+    letter-spacing:3px;
+    color:var(--cream-dim);
+    margin:14px 0 26px;
+    text-transform:uppercase;
+  }
+  .panel{
+    background:var(--bg-card);
+    border-top:2px solid var(--rose);
+    border-radius:14px;
+    padding:28px 24px 22px;
+  }
+  .eyebrow{
+    font-size:11px;
+    letter-spacing:2px;
+    color:var(--rose);
+    text-transform:uppercase;
+    margin-bottom:4px;
+  }
+  .role{
+    font-size:15px;
+    color:var(--cream-dim);
+    font-weight:600;
+    margin-bottom:18px;
+  }
+  h2{
+    font-family:Georgia,'Times New Roman',serif;
+    font-weight:400;
+    font-size:29px;
+    margin-bottom:14px;
+    color:var(--cream);
+  }
+  .desc{
+    font-size:15px;
+    line-height:1.55;
+    color:var(--cream-dim);
+    margin-bottom:22px;
+  }
+  .divider{
+    border:none;
+    border-top:1px dashed var(--line);
+    margin:20px 0;
+  }
+  .row{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    padding:14px 0;
+    border-bottom:1px solid var(--line);
+    text-decoration:none;
+    color:inherit;
+  }
+  .row:last-of-type{border-bottom:none;}
+  .icon{
+    width:38px;height:38px;
+    border-radius:50%;
+    background:#2c211a;
+    display:flex;align-items:center;justify-content:center;
+    font-size:16px;
+    flex-shrink:0;
+  }
+  .row-label{
+    font-size:10px;
+    letter-spacing:1.5px;
+    color:var(--cream-dim);
+    text-transform:uppercase;
+    margin-bottom:2px;
+  }
+  .row-value{
+    font-size:16px;
+    color:var(--cream);
+  }
+  .ctas{
+    display:flex;
+    gap:12px;
+    margin-top:22px;
+  }
+  .btn{
+    flex:1;
+    text-align:center;
+    padding:15px 10px;
+    border-radius:10px;
+    font-size:13px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    text-decoration:none;
+    font-weight:600;
+    cursor:pointer;
+    border:none;
+  }
+  .btn-primary{background:var(--rose);color:#2a1418;}
+  .btn-secondary{background:transparent;border:1px solid var(--line);color:var(--cream);}
+  .btn-outline{
+    margin-top:12px;
+    width:100%;
+    padding:15px;
+    border-radius:10px;
+    border:1px dashed var(--rose-dim);
+    background:transparent;
+    color:var(--rose);
+    font-size:13px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    font-weight:600;
+    cursor:pointer;
+  }
+  .footer{
+    text-align:center;
+    font-size:11px;
+    letter-spacing:3px;
+    color:var(--cream-dim);
+    margin-top:26px;
+    text-transform:uppercase;
+  }
+
+  /* Lead capture modal */
+  .overlay{
+    display:none;
+    position:fixed;inset:0;
+    background:rgba(10,6,4,0.75);
+    align-items:center;justify-content:center;
+    padding:20px;
+    z-index:10;
+  }
+  .overlay.open{display:flex;}
+  .modal{
+    background:var(--bg-card);
+    border-top:2px solid var(--rose);
+    border-radius:14px;
+    padding:26px 22px;
+    width:100%;
+    max-width:380px;
+  }
+  .modal h3{
+    font-family:Georgia,serif;
+    font-weight:400;
+    font-size:22px;
+    margin-bottom:6px;
+  }
+  .modal p{
+    font-size:13px;
+    color:var(--cream-dim);
+    margin-bottom:18px;
+  }
+  .field{margin-bottom:14px;}
+  .field label{
+    display:block;
+    font-size:10px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    color:var(--cream-dim);
+    margin-bottom:6px;
+  }
+  .field input{
+    width:100%;
+    background:#1c130f;
+    border:1px solid var(--line);
+    border-radius:8px;
+    padding:12px;
+    color:var(--cream);
+    font-size:15px;
+  }
+  .field input:focus{outline:1px solid var(--gold-soft);}
+  .modal-actions{display:flex;gap:10px;margin-top:18px;}
+  .modal-actions button{cursor:pointer;}
+  .status{
+    font-size:13px;
+    margin-top:12px;
+    color:var(--cream-dim);
+    text-align:center;
+  }
+</style>
+</head>
+<body>
+
+<div class="card">
+  <div class="crest"><span>DM</span></div>
+  <h1>Dawn <em>Mickens</em></h1>
+  <div class="tagline">Ceremonies &middot; Journeys &middot; Stories</div>
+
+  <div class="panel">
+    <div class="eyebrow">Timeless Connection</div>
+    <div class="role">Co-Owner &amp; Officiant</div>
+
+    <h2>Extraordinary Officiants</h2>
+    <p class="desc">Award-winning Las Vegas wedding officiants — Darryl + Dawn. Over 2,000 personalized ceremonies for luxury, destination, elopement &amp; micro weddings.</p>
+
+    <hr class="divider">
+
+    <a class="row" href="tel:+17029037461">
+      <div class="icon">📞</div>
+      <div>
+        <div class="row-label">Ceremony Line</div>
+        <div class="row-value">(702) 903-7461</div>
+      </div>
+    </a>
+
+    <a class="row" href="mailto:info@timelessconnection.com">
+      <div class="icon">✉️</div>
+      <div>
+        <div class="row-label">Email</div>
+        <div class="row-value">info@timelessconnection.com</div>
+      </div>
+    </a>
+
+    <a class="row" href="https://timelessconnection.com" target="_blank" rel="noopener">
+      <div class="icon">🌐</div>
+      <div>
+        <div class="row-label">Website</div>
+        <div class="row-value">timelessconnection.com</div>
+      </div>
+    </a>
+
+    <a class="row" href="https://instagram.com/timelessconnection" target="_blank" rel="noopener">
+      <div class="icon">IG</div>
+      <div>
+        <div class="row-label">Instagram</div>
+        <div class="row-value">@timelessconnection</div>
+      </div>
+    </a>
+
+    <a class="row" href="https://facebook.com/timelessconnection" target="_blank" rel="noopener">
+      <div class="icon">f</div>
+      <div>
+        <div class="row-label">Facebook</div>
+        <div class="row-value">/timelessconnection</div>
+      </div>
+    </a>
+
+    <div class="ctas">
+      <button class="btn btn-primary" onclick="openModal()">Check Our Date</button>
+      <a class="btn btn-secondary" href="mailto:info@timelessconnection.com">Email Us</a>
+    </div>
+
+    <a class="btn-outline" style="display:block;text-decoration:none;" href="dawn-mickens.vcf" download>+ Add to Contacts</a>
+  </div>
+
+  <div class="footer">Las Vegas, Nevada</div>
+</div>
+
+<!-- Lead capture modal -->
+<div class="overlay" id="overlay">
+  <div class="modal">
+    <h3>Check Our Date</h3>
+    <p>Tell us about your day and Dawn will follow up personally.</p>
+    <form id="leadForm">
+      <div class="field">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="field">
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" name="phone" required>
+      </div>
+      <div class="field">
+        <label for="weddingDate">Wedding Date</label>
+        <input type="date" id="weddingDate" name="weddingDate" required>
+      </div>
+      <div class="modal-actions">
+        <button type="button" class="btn btn-secondary" style="flex:1;" onclick="closeModal()">Cancel</button>
+        <button type="submit" class="btn btn-primary" style="flex:1;">Send</button>
+      </div>
+      <div class="status" id="status"></div>
+    </form>
+  </div>
+</div>
+
+<script>
+  // === REPLACE THIS with your Google Apps Script Web App URL ===
+  const SHEET_ENDPOINT = "PASTE_YOUR_GOOGLE_APPS_SCRIPT_URL_HERE";
+
+  function openModal(){ document.getElementById('overlay').classList.add('open'); }
+  function closeModal(){ document.getElementById('overlay').classList.remove('open'); }
+
+  document.getElementById('overlay').addEventListener('click', function(e){
+    if(e.target === this) closeModal();
+  });
+
+  document.getElementById('leadForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    const status = document.getElementById('status');
+    const btn = e.target.querySelector('button[type="submit"]');
+
+    if(SHEET_ENDPOINT.indexOf('PASTE_YOUR') === 0){
+      status.textContent = "Set up your Google Sheet endpoint first (see README).";
+      return;
+    }
+
+    const data = {
+      name: document.getElementById('name').value,
+      email: document.getElementById('email').value,
+      phone: document.getElementById('phone').value,
+      weddingDate: document.getElementById('weddingDate').value,
+      submittedAt: new Date().toISOString()
+    };
+
+    btn.disabled = true;
+    status.textContent = "Sending...";
+
+    fetch(SHEET_ENDPOINT, {
+      method: "POST",
+      mode: "no-cors",
+      headers: {"Content-Type":"application/json"},
+      body: JSON.stringify(data)
+    }).then(function(){
+      status.textContent = "Thank you! Dawn will be in touch shortly.";
+      e.target.reset();
+      btn.disabled = false;
+      setTimeout(closeModal, 1800);
+    }).catch(function(){
+      status.textContent = "Something went wrong — please call or email us directly.";
+      btn.disabled = false;
+    });
+  });
+</script>
+
+</body>
+</html>
